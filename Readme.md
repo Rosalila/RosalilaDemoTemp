@@ -6,8 +6,8 @@ Build instructions using Code::Blocks:
 
 1. Install the dependencies
 ---------------------------
-* apt-get install libsdl1.2-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev freeglut3-dev
-* yum install SDL-devel SDL_mixer-devel SDL_image-devel SDL_ttf-devel freeglut-devel 
+* apt-get install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev freeglut3-dev
+* TODO port to SDL2: yum install SDL-devel SDL_mixer-devel SDL_image-devel SDL_ttf-devel freeglut-devel 
 
 2. Link the libraries
 ---------------------
@@ -16,9 +16,7 @@ Add the following:
 *   lGL
 *   lglut
 *   lGLU
-*   lSDL
-*   lSDL_image
-*   lSDL_ttf
-*   lSDL_mixer
-*   lsmpeg
-
+*   lSDL2
+*   lSDL2_image
+*   lSDL2_ttf
+*   lSDL2_mixer
