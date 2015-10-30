@@ -1,4 +1,3 @@
-#include <GL/freeglut.h>
 #include <GL/gl.h>
 #include <stdio.h>
 
@@ -41,10 +40,6 @@ int main(int argc, char *argv[])
 {
     //Clean the previous log
     clearLog();
-
-    //OpenGL initialization
-    glutInit (&argc, argv);
-    glutInitDisplayMode (GLUT_DOUBLE | GLUT_DEPTH | GLUT_RGB);
 
     //Input receiver initialization
     Receiver* receiver = new Receiver();

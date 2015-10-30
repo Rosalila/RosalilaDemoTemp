@@ -150,7 +150,7 @@ RosalilaGraphics::RosalilaGraphics()
     GLenum error = GL_NO_ERROR;
     error = glGetError();
     if( error != GL_NO_ERROR ) {
-         printf( "Error initializing OpenGL! %s\n", gluErrorString( error ) );
+//         printf( "Error initializing OpenGL! %s\n", gluErrorString( error ) );
          exit(12);
     }
 
@@ -530,62 +530,62 @@ void RosalilaGraphics::addExplosion(int x,int y)
 
 void RosalilaGraphics::draw3DCube(int x,int y,float size,Color color)
 {
-    glDisable(GL_TEXTURE_2D);
-    glEnable(GL_BLEND);
-    glMatrixMode (GL_PROJECTION);
-    glLoadIdentity ();
-    gluPerspective (45.0, (GLfloat) screen_width / (GLfloat) screen_height, 0.1, 100.0);
-    glMatrixMode (GL_MODELVIEW);
-
-    glEnable (GL_LIGHT0);
-    glEnable (GL_LIGHT1);
-    glLightfv (GL_LIGHT0, GL_AMBIENT, cube.light0Amb);
-    glLightfv (GL_LIGHT0, GL_DIFFUSE, cube.light0Dif);
-    glLightfv (GL_LIGHT0, GL_SPECULAR, cube.light0Spec);
-    glLightfv (GL_LIGHT0, GL_POSITION, cube.light0Pos);
-
-    glLightfv (GL_LIGHT1, GL_AMBIENT, cube.light1Amb);
-    glLightfv (GL_LIGHT1, GL_DIFFUSE, cube.light1Dif);
-    glLightfv (GL_LIGHT1, GL_SPECULAR, cube.light1Spec);
-    glLightfv (GL_LIGHT1, GL_POSITION, cube.light1Pos);
-
-    glLightModelf (GL_LIGHT_MODEL_TWO_SIDE, GL_TRUE);
-    glMaterialfv (GL_FRONT_AND_BACK, GL_AMBIENT, cube.materialAmb);
-    glMaterialfv (GL_FRONT_AND_BACK, GL_DIFFUSE, cube.materialDif);
-    glMaterialfv (GL_FRONT_AND_BACK, GL_SPECULAR, cube.materialSpec);
-    glMaterialf (GL_FRONT_AND_BACK, GL_SHININESS, cube.materialShininess);
-    glEnable (GL_NORMALIZE);
-
-    cube.logic();
-
-
-    //glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-    glLoadIdentity ();
-
-    /* Place the camera */
-    //
-    glPushMatrix ();
-    float pos_x=x;
-    float pos_y=y;
-    //camera align
-    pos_x-=camera_x;
-    pos_y+=camera_y;
-
-    pos_x+=695.0;
-    pos_y+=393.0;
-    glTranslatef (-((screen_width-pos_x)/9.25), ((screen_height-pos_y)/9.25), -100.0);
-    glRotatef (cube.angle, 0.0, 1.0, 0.0);
-    cube.setMaterialColor(color.getRed(),color.getGreen(),color.getBlue(),color.getAlpha());
-
-    //Draw
-    glEnable (GL_LIGHTING);
-    glDisable (GL_LIGHT0);
-    glEnable (GL_DEPTH_TEST);
-    glutSolidCube (size);
-    glDisable (GL_LIGHTING);
-
-    glPopMatrix();
+//    glDisable(GL_TEXTURE_2D);
+//    glEnable(GL_BLEND);
+//    glMatrixMode (GL_PROJECTION);
+//    glLoadIdentity ();
+//    gluPerspective (45.0, (GLfloat) screen_width / (GLfloat) screen_height, 0.1, 100.0);
+//    glMatrixMode (GL_MODELVIEW);
+//
+//    glEnable (GL_LIGHT0);
+//    glEnable (GL_LIGHT1);
+//    glLightfv (GL_LIGHT0, GL_AMBIENT, cube.light0Amb);
+//    glLightfv (GL_LIGHT0, GL_DIFFUSE, cube.light0Dif);
+//    glLightfv (GL_LIGHT0, GL_SPECULAR, cube.light0Spec);
+//    glLightfv (GL_LIGHT0, GL_POSITION, cube.light0Pos);
+//
+//    glLightfv (GL_LIGHT1, GL_AMBIENT, cube.light1Amb);
+//    glLightfv (GL_LIGHT1, GL_DIFFUSE, cube.light1Dif);
+//    glLightfv (GL_LIGHT1, GL_SPECULAR, cube.light1Spec);
+//    glLightfv (GL_LIGHT1, GL_POSITION, cube.light1Pos);
+//
+//    glLightModelf (GL_LIGHT_MODEL_TWO_SIDE, GL_TRUE);
+//    glMaterialfv (GL_FRONT_AND_BACK, GL_AMBIENT, cube.materialAmb);
+//    glMaterialfv (GL_FRONT_AND_BACK, GL_DIFFUSE, cube.materialDif);
+//    glMaterialfv (GL_FRONT_AND_BACK, GL_SPECULAR, cube.materialSpec);
+//    glMaterialf (GL_FRONT_AND_BACK, GL_SHININESS, cube.materialShininess);
+//    glEnable (GL_NORMALIZE);
+//
+//    cube.logic();
+//
+//
+//    //glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+//
+//    glLoadIdentity ();
+//
+//    /* Place the camera */
+//    //
+//    glPushMatrix ();
+//    float pos_x=x;
+//    float pos_y=y;
+//    //camera align
+//    pos_x-=camera_x;
+//    pos_y+=camera_y;
+//
+//    pos_x+=695.0;
+//    pos_y+=393.0;
+//    glTranslatef (-((screen_width-pos_x)/9.25), ((screen_height-pos_y)/9.25), -100.0);
+//    glRotatef (cube.angle, 0.0, 1.0, 0.0);
+//    cube.setMaterialColor(color.getRed(),color.getGreen(),color.getBlue(),color.getAlpha());
+//
+//    //Draw
+//    glEnable (GL_LIGHTING);
+//    glDisable (GL_LIGHT0);
+//    glEnable (GL_DEPTH_TEST);
+//    glutSolidCube (size);
+//    glDisable (GL_LIGHTING);
+//
+//    glPopMatrix();
 }
 
 void RosalilaGraphics::drawObject()
